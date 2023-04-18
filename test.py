@@ -46,8 +46,7 @@ for record_id in record_ids:
 			if feature.type == "tRNA":
 				trna_dict.setdefault((feature.location.start, feature.location.end), []) 
 
-		# Itera nuovamente attraverso tutte le feature del record e seleziona solo le misc_feature che contengono "rna editing" o "rna e" nelle 
-note
+		# Itera nuovamente attraverso tutte le feature del record e seleziona solo le misc_feature che contengono "rna editing" o "rna e" nelle note
 		for feature in record.features:
 			if feature.type == "misc_feature":
 				if "rna editing" in feature.qualifiers.get("note", [""])[0].lower() or "rna e" in feature.qualifiers.get("note", [""])[0].lower():
